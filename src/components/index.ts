@@ -1,2 +1,2 @@
-export { PlaceCard } from './PlaceCard';
+export { OfferCard } from './OfferCard';
 export { ScrollToTop } from './SrcollToTop';
