@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 
 type ProtectedRouteProps = {
-  user: string;
+  user: unknown;
   children?: ReactNode;
 };
 
