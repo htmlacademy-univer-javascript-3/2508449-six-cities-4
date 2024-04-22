@@ -4,14 +4,14 @@ import type { Place } from '../types';
 type PlaceCardProps = Place;
 
 export const PlaceCard: FC<PlaceCardProps> = ({
-                                                name,
-                                                type,
-                                                preview,
-                                                valuePerNight,
-                                                rating,
-                                                isPremium = false,
-                                                isBookmarked = false,
-                                              }) => (
+  name,
+  type,
+  preview,
+  valuePerNight,
+  rating,
+  isPremium = false,
+  isBookmarked = false,
+}) => (
   <article className="cities__card place-card">
     {isPremium && (
       <div className="place-card__mark">
