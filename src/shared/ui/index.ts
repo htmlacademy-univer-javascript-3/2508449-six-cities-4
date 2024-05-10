@@ -1,6 +1,8 @@
-export { Page } from './Page/Page';
 export { Card } from './Card/Card';
-export { Icon } from './Icon/Icon';
 export { Comment } from './Comment/Comment';
-export { Rating } from './Rating/Rating';
 export { Gallery } from './Gallery/Gallery';
+export { Icon } from './Icon/Icon';
+export { Logo } from './Logo/Logo';
+export { Page } from './Page/Page';
+export { Rating } from './Rating/Rating';
+export { Spinner } from './Spinner/Spinner';

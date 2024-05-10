@@ -3,8 +3,13 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Layout } from './Layout';
 import { ProtectedRoute } from './ProtectedRoute';
 
-import { FavouritesPage, MainPage, NotFoundPage, OfferPage } from 'pages';
-import { offers } from 'shared/mocks';
+import {
+  FavouritesPage,
+  LoginPage,
+  MainPage,
+  NotFoundPage,
+  OfferPage,
+} from 'pages';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainPage offers={offers} />,
+        element: <MainPage />,
       },
       {
         path: 'offer/:id',
@@ -22,17 +27,16 @@ const router = createBrowserRouter([
       {
         path: 'favourites',
         element: (
-          <ProtectedRoute user={{}}>
-            <FavouritesPage
-              items={{
-                Amsterdam: offers.slice(0, 2),
-                Cologne: [offers[2]],
-              }}
-            />
+          <ProtectedRoute>
+            <FavouritesPage />
           </ProtectedRoute>
         ),
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <LoginPage />,
   },
   {
     path: '*',
