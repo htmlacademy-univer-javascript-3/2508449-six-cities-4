@@ -9,7 +9,7 @@ type CommentProps = {
   authorName: string;
   text: string;
   rating: number;
-  date: string;
+  date: Date;
 };
 
 export const Comment: FC<CommentProps> = ({

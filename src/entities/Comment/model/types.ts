@@ -2,7 +2,7 @@ import type { Person } from 'entities';
 
 export type Comment = CommentPayload & {
   id: string;
-  date: string;
+  date: Date;
   user: Person;
 };
 
