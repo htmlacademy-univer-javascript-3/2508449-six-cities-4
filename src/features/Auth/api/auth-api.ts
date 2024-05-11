@@ -7,6 +7,7 @@ import { HttpService } from 'shared/services';
 export const AuthAPI = createApi({
   reducerPath: 'api/auth',
   baseQuery: HttpService.baseQuery(),
+
   endpoints: (build) => ({
     getUserInfo: build.query<ResponseUser, void>({
       query: () => '/login',

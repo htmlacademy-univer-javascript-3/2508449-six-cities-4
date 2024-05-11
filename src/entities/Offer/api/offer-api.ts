@@ -15,6 +15,7 @@ export const OfferAPI = createApi({
     getNearbyOffers: build.query<OfferListItem[], { id: string }>({
       query: (arg) => `/offers/${arg.id}/nearby`,
     }),
+
   }),
 });
 
