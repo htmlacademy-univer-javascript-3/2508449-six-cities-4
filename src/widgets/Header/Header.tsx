@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 import { NavLoggedIn } from 'features/Auth/ui/NavLoggedIn';
 import { NavLoggedOff } from 'features/Auth/ui/NavLoggedOff';
