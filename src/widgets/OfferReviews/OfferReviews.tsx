@@ -1,15 +1,29 @@
 import type { FC } from 'react';
 
-import { ReviewComment, type Review } from 'entities';
+import { ReviewComment } from 'entities';
+import { useGetCommentsQuery } from 'entities/Comment';
 import { CreateOfferReviewForm } from 'features';
-import { reviews } from 'shared/mocks';
+import { useTypedSelector } from 'shared/hooks';
+import { Spinner } from 'shared/ui';
 
 type OfferReviewsProps = {
   offerId: string;
 };
 
 export const OfferReviews: FC<OfferReviewsProps> = ({ offerId }) => {
-  const data = reviews as Review[];
+  const user = useTypedSelector((state) => state.auth.user);
+
+  const { data, isLoading, refetch, requestId } = useGetCommentsQuery({
+    offerId,
+  });
+
+  if (isLoading || !data) {
+    return (
+      <section className="offer__reviews reviews">
+        <Spinner />
+      </section>
+    );
+  }
 
   return (
     <section className="offer__reviews reviews">
@@ -23,7 +37,13 @@ export const OfferReviews: FC<OfferReviewsProps> = ({ offerId }) => {
           ))}
         </ul>
       )}
-      <CreateOfferReviewForm offerId={offerId} />
+      {user && (
+        <CreateOfferReviewForm
+          offerId={offerId}
+          onSuccess={refetch}
+          formKey={`${requestId}`}
+        />
+      )}
     </section>
   );
 };
