@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-
 import { cityReducer } from 'entities/City';
 import { CommentAPI } from 'entities/Comment';
 import { OfferAPI, offersReducer } from 'entities/Offer';
