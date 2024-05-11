@@ -5,6 +5,7 @@ import { useOfferSortActions } from '..';
 import { offerSortTypes, type OfferSortType } from '../model/types';
 
 import { useTypedSelector } from 'shared/hooks';
+
 type OptionProps = {
   title: string;
   active?: boolean;
