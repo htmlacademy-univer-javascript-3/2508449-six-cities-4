@@ -13,7 +13,7 @@ export const ReviewComment: FC<ReviewCommentProps> = ({ review }) => {
     <Comment
       authorName={review.author.name}
       date={review.date}
-      image={review.author.avatar}
+      image={review.author.avatarUrl}
       rating={review.rating}
       text={review.text}
     />
